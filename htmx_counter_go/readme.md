@@ -1,8 +1,15 @@
-## A Counter implementation using Go and HTMX
+## A Counter implementation using HTMX and Go
 
-This is a simple showcase of using Go (with [Fiber](https://gofiber.io/) framework) and [HTMX](https://htmx.org/) for implementing the classic counter example that can be found in many JS based SPA hello world examples.
+This is a simple showcase of implementing the classic counter example (that can be found in many JS based SPA hello world examples) using:
+
+-   [HTMX](https://htmx.org/) as the UI library for the front-end logic.
+-   Go (with [Fiber](https://gofiber.io/) framework) as the Web server and API back-end.
 
 The (global, not user/session/browser specific) state of the counter is kept in server's memory, so that when the page is refreshed, the last value is shown.
+
+![Screenshots](./screenshots.gif)
+
+<br/>
 
 ### Usage
 

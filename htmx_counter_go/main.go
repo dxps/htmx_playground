@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	counter "github.com/dxps/go_htmx_playground/go_htmx_counter/internal"
+	counter "github.com/dxps/go_htmx_playground/htmx_counter_go/internal"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/template/html/v2"
 )

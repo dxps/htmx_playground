@@ -1,4 +1,4 @@
-module github.com/dxps/go_htmx_playground/go_htmx_counter
+module github.com/dxps/go_htmx_playground/htmx_counter_go
 
 go 1.21.0
 

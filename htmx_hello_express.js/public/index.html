@@ -6,22 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HTMX Hello World</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/htmx.org@1.9.5" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <div class="flex flex-col items-center justify-center h-screen bg-slate-400">
+    <div class="flex justify-around bg-slate-400">
 
-        <div class="flex space-x-4 pb-8">
-            <button class="bg-slate-500 hover:bg-slate-600 active:bg-slate-900 rounded-lg py-2 px-4 text-white"
-                hx-get="/say-hello" hx-target="#responseDiv" hx-swap="outerHTML">
-                Click me!
-            </button>
+        <div class="flex flex-col items-center justify-center h-screen">
+
+            <div class="flex pb-8 text-center text-gray-300 text-lg">
+                Trigger a request and put <br /> the response into the DOM.
+            </div>
+
+            <div class="flex pb-8">
+                <button class="bg-slate-500 hover:bg-slate-600 active:bg-slate-900 rounded-lg py-2 px-4 text-white"
+                    hx-get="/say-hello" hx-target="#responseDiv" hx-swap="outerHTML">
+                    Get a hello!
+                </button>
+            </div>
+
+            <div class="flex justify-center text-white">
+                <div id="responseDiv"></div>
+            </div>
+
         </div>
 
-        <div class="flex space-x-4">
-            <div id="responseDiv"></div>
+        <div class="flex flex-col items-center justify-center h-screen">
+
+            <div class="flex pb-8 text-gray-300 text-lg">
+                Using events as the trigger.
+            </div>
+
+            <div class="flex pb-8">
+                <button class="bg-slate-500 hover:bg-slate-600 active:bg-slate-900 rounded-lg py-2 px-4 text-white"
+                    hx-get="/status" hx-target="#loading" hx-trigger="click delay:1s" hx-indicator="#my-indicator">
+                    Get the state
+                </button>
+            </div>
+
+            <div class="flex justify-center" id="loading">
+                <img id="my-indicator" class="htmx-indicator" src="spin.svg" />
+            </div>
+
         </div>
 
     </div>

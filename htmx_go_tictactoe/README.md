@@ -1,6 +1,6 @@
 # TicTacToe
 
-<small>Info: This code is taken from [here](https://github.com/abayomipopoola/tictactoe/tree/main)</small>
+<small>_Info: This code is taken from [here](https://github.com/abayomipopoola/tictactoe/tree/main)_</small>
 
 This is a revised implementation of the original [TicTacToe game](https://github.com/abayomipopoola/tictactoe/tree/single-player), written in Go/HTMX.
 

@@ -1,11 +1,11 @@
-# htmx_notes_express.js
+# A notes app built w/ HTMX and Express.js
 
 This is a demo note-taking app using markdown inspired by the [React Server Components demo](https://github.com/reactjs/server-components-demo) written using
 [htmx](https://htmx.org) and [Express.js](https://expressjs.com).
 
 ![Screenshots](screenshots.gif)
 
-Forked from [jrajasegar/htmx-notes](https://github.com/rajasegar/htmx-notes/tree/main) repo.
+<small>Forked from [jrajasegar/htmx-notes](https://github.com/rajasegar/htmx-notes/tree/main) repo.</small>
 
 <br/>
 

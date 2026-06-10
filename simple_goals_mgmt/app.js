@@ -8,7 +8,8 @@ function renderGoalListItem(id, text) {
             <span>${text}</span>
             <button
                 hx-delete="/goals/${id}"
-                hx-target="#goal-${id}"
+                hx-target="closest li"
+                hx-confirm="Are you sure?"
                 >Remove
             </button>
         </li>
@@ -44,7 +45,8 @@ app.get('/', (req, res) => {
             hx-post="/goals" 
             hx-target="#goals"
             hx-swap="beforeend"
-            hx-on::after-request="if(event.detail.successful) this.reset()">
+            hx-on::after-request="if (event.detail.successful) this.reset()"
+            hx-disabled-elt="#goal-form button">
             <div>
               <label htmlFor="goal">Goal</label>
               <input type="text" id="goal" name="goal" />
@@ -53,8 +55,11 @@ app.get('/', (req, res) => {
           </form>
         </section>
         <section>
-          <ul id="goals" hx-swap="outerHTML">
-          ${courseGoals.map(
+          <ul 
+            id="goals" 
+            hx-swap="outerHTML"
+            hx-confirm="Are you sure?">
+            ${courseGoals.map(
         (goal, index) => renderGoalListItem(index, goal)
     ).join('')}
           </ul>
@@ -72,7 +77,10 @@ app.post('/goals', (req, res) => {
     // res.redirect('/');
 
     const index = courseGoals.length - 1;
-    res.send(renderGoalListItem(index, goal));
+    // Simulating a delay, just to see that the submit button is disabled.
+    setTimeout(() => {
+        res.send(renderGoalListItem(index, goal));
+    }, 500);
 });
 
 app.delete('/goals/:idx', (req, res) => {

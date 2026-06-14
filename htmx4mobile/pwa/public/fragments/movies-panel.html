@@ -1,0 +1,37 @@
+<section class="form-panel" aria-labelledby="movie-form-title">
+  <div class="panel-heading">
+    <div>
+      <p class="eyebrow">Local cache</p>
+      <h2 id="movie-form-title">Add a movie</h2>
+    </div>
+    <button class="secondary" type="button" hx-on:click="movieApp.resetForm()">Clear</button>
+  </div>
+
+  <form id="movie-form" hx-on:submit="movieApp.save(event)">
+    <input id="movie-id" name="id" type="hidden">
+
+    <label for="movie-title">Title</label>
+    <input id="movie-title" name="title" type="text" autocomplete="off" required maxlength="80">
+
+    <label for="movie-description">Description</label>
+    <textarea id="movie-description" name="description" rows="4" required maxlength="280"></textarea>
+
+    <label for="movie-year">Year</label>
+    <input id="movie-year" name="year" type="number" inputmode="numeric" min="1888" max="2100" required>
+
+    <button class="primary" type="submit" id="save-button">Add movie</button>
+  </form>
+</section>
+
+<section class="list-panel" aria-labelledby="movie-list-title">
+  <div class="panel-heading">
+    <div>
+      <p class="eyebrow" id="cache-state">Cached locally</p>
+      <h2 id="movie-list-title">Your movies</h2>
+    </div>
+    <button class="secondary" type="button" hx-on:click="movieApp.seed()">Load examples</button>
+  </div>
+
+  <div id="movie-list" class="movie-list" aria-live="polite"></div>
+  <p id="empty-state" class="empty-state" hidden>No movies yet. Add one above and it will stay available offline.</p>
+</section>

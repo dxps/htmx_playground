@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#0f766e">
+    <title>HTMX Movies</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script defer src="/vendor/htmx.min.js"></script>
+    <script defer src="/app.js"></script>
+</head>
+
+<body>
+    <header class="app-header">
+        <div>
+            <p class="eyebrow">HTMX4Mobile</p>
+            <h1>Movies</h1>
+        </div>
+        <div class="status-pill" id="connection-status" aria-live="polite">Checking</div>
+    </header>
+
+    <main class="app-shell">
+        <section id="movie-panel" hx-get="/fragments/movies-panel.html" hx-trigger="load" hx-swap="innerHTML">
+            <div class="loading-card">Loading movies...</div>
+        </section>
+    </main>
+
+    <template id="movie-row-template">
+        <article class="movie-card">
+            <div>
+                <p class="movie-year"></p>
+                <h2 class="movie-title"></h2>
+                <p class="movie-description"></p>
+                <p class="movie-id"></p>
+            </div>
+            <div class="movie-actions">
+                <button class="secondary" type="button" data-action="edit">Edit</button>
+                <button class="danger" type="button" data-action="delete">Delete</button>
+            </div>
+        </article>
+    </template>
+</body>
+
+</html>

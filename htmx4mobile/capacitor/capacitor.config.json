@@ -1,0 +1,8 @@
+{
+  "appId": "dev.dxps.htmx4mobile",
+  "appName": "HTMX Movies",
+  "webDir": "public",
+  "server": {
+    "androidScheme": "https"
+  }
+}

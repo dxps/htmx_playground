@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" viewBox="0 0 192 192" role="img" aria-label="HTMX Movies icon">
+  <rect width="192" height="192" rx="42" fill="#0f766e"/>
+  <rect x="34" y="52" width="124" height="88" rx="14" fill="#f8fafc"/>
+  <path d="M50 52l18 34m20-34l18 34m20-34l18 34" stroke="#0f766e" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="76" cy="116" r="10" fill="#0f766e"/>
+  <path d="M96 106l28 16-28 16z" fill="#0f766e"/>
+</svg>
